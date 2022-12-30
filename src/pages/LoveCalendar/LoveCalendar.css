@@ -1,0 +1,17 @@
+#tieude{
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    color: plum!important;
+}
+
+.bg-demo{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.demo-anh{
+    max-width: 300px;
+}

@@ -1,0 +1,77 @@
+.video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+source {
+  background: linear-gradient(to top, black, transparent);
+}
+.noi_dung {
+  position: relative;
+  height: 40vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: pink;
+}
+.noi_dung h3 {
+  font-size: 50px;
+}
+
+.noi_dung1 {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: pink;
+}
+.noi_dung1 h3 {
+  font-size: 50px;
+}
+.noi_dung2 {
+  position: relative;
+  left:90vh;
+  height: 6vh;
+  margin-bottom: 12vh;
+  color: red;
+  font-size: 20px;
+}
+h1 {
+  color: CornflowerBlue;
+  text-transform: uppercase;
+  letter-spacing: 1vw;
+  line-height: 1.2;
+  font-size: 3vw;
+  text-align: center;
+}
+.calendar{
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.modal-title{
+  color: pink;
+}
+
+.modal-content{
+  top: 15vh;
+}
+
+.modal-body{
+  padding-left: 5vh!important;
+  padding-right: 5vh!important;
+}
+.text-love{
+  font-size: 20px;
+  letter-spacing: .5px;
+  font-weight: 600;
+}
+
+.button-mem{
+  font-weight: bold!important;
+}

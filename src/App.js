@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Lover from './pages/Intro/Lover';
+import Calendar from './pages/Calendar/Calendar';
+import LoveCalendar from './pages/LoveCalendar/LoveCalendar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/love' component={Lover} />
+        <Route exact path='/calendar' component={Calendar} />
+        <Route exact path='/loveCalendar' component={LoveCalendar} />
+        <Route exact path='/' component={Lover} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
