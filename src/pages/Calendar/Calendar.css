@@ -75,3 +75,9 @@ h1 {
 .button-mem{
   font-weight: bold!important;
 }
+
+.bimat{
+  position: relative;
+  border-radius: 10px;
+  border-color: red;
+}

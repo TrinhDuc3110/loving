@@ -6,6 +6,48 @@ import 'react-calendar/dist/Calendar.css'
 
 export default function Calendar(props) {
 
+  const [userLogin, setUserLogin] = useState({ userName: '', passWord: '', status: false });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    const newUserLogin = {
+      ...userLogin,
+      [name]: value,
+    };
+    let valid = true;
+    for (let key in newUserLogin) {
+      if (key !== 'status') {
+        if (newUserLogin[key].trim() === '') {
+          valid = false;
+        }
+      }
+    }
+    if (!valid) {
+      newUserLogin.status = true;
+    } else {
+      newUserLogin.status = false;
+    }
+    setUserLogin(newUserLogin);
+  }
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    if (userLogin.passWord === 'mãi yêu anh') {
+      //thành công thì chuyển về trang trước đó
+      // props.history.goBack();
+      //Chuyển đến trang chỉ định sau khi xử lý
+      // props.history.push('/home')
+      //replace thay đổi nội dung 
+      // props.history.replace('/home');
+      props.history.push('/loveCalendar');
+      localStorage.setItem('userLogin', JSON.stringify(userLogin));
+    } else {
+      alert('Wrong passWord huhu!');
+      return;
+    }
+  }
+
+
   return (
     <div>
       <video className='video' playsInline autoPlay muted loop>
@@ -30,12 +72,12 @@ export default function Calendar(props) {
             <div className="modal-body">
               <p className='text-love'>
                 Happy Birthday anh iu
-                Vậy là người iu em đã thêm được 1 tuổi nữa rồi ắ , mong là anh sẽ luôn hạnh phúc với những gì mà anh đã chọn , mong là anh sẽ luôn thành công trong công việc cũng như học tập.
-                Em sẽ không chúc anh nhiều hay gì cả bởi vì anh xứng đáng được hưởng tất cả những cái tốt đẹp nhất. Với thế giới thì anh là 1 người bth nhưng mà với em thì anh gần như là tất cả…
-                Chúc anh tuổi 21 thiệc là hạnh phúc nhá ❤️ ilusm.
-                <button onClick={()=>{
-                  props.history.push('/loveCalendar');
-                }} className='btn btn-danger button-mem'>Memories 2021 (click)</button>
+                Vậy là người iu em đã thêm được 1 tuổi nữa rồi ắ , mong là anh sẽ luôn hạnh phúc với những gì mà anh đã chọn , mong là anh sẽ luôn thành công trong công việc cũng như học tập. <br/>Em sẽ không chúc anh nhiều hay gì cả bởi vì anh xứng đáng được hưởng tất cả những cái tốt đẹp nhất. Với thế giới thì anh là 1 người bth nhưng mà với em thì anh gần như là tất cả…<br/>
+                Chúc anh tuổi 21 thiệc là hạnh phúc nhá ❤️ ilusm. 
+                <br/>Mật khẩu: 
+                <form className='form-demo' onSubmit={handleLogin}>
+                  <input placeholder='Memories 2022' name='passWord' className='input1 bimat' onChange={handleChange}></input>
+                </form>
               </p>
             </div>
           </div>
